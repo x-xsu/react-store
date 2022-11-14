@@ -1,4 +1,5 @@
 @import "/src/styles/variables";
+@import "/src/styles/mixins";
 
 .card {
   position: relative;
@@ -17,19 +18,6 @@
   width: 100%;
   height: 175px;
   object-fit: contain;
-}
-
-.action {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(#3a3a3a, 0.72);
-  opacity: 0;
-  visibility: hidden;
-  transition: $duration;
 }
 
 .title {
@@ -78,4 +66,57 @@
 
 .price {
   text-align: right;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
+  background: rgba(#3a3a3a, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: $duration;
+
+  > * {
+    margin: 8px 0;
+  }
+}
+
+.actionBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnShare {
+  svg {
+    fill: #fff;
+  }
+
+  &:hover svg {
+    fill: #000;
+  }
+}
+
+.btnLike {
+  svg path {
+    stroke: #fff;
+  }
+
+  &:hover svg path {
+    stroke: $cl-red;
+  }
+
+  &:active svg path {
+    stroke: $cl-red;
+    fill: $cl-red;
+  }
 }

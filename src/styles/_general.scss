@@ -1,4 +1,5 @@
 @import "/src/styles/variables";
+@import "/src/styles/mixins";
 
 * {
   box-sizing: border-box;
@@ -11,6 +12,23 @@ body {
   color: $cl-txt-default;
 }
 
+section {
+  margin: 80px 0;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  color: $cl-txt-primary;
+  margin-bottom: 32px;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -20,4 +38,36 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
+}
+
+.btn {
+  @extend %flex-element-center;
+  height: 44px;
+  border-radius: 44px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0 25px;
+  cursor: pointer;
+  transition: all $duration;
+
+  @include button-bg($cl-primary);
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.btnDefault {
+  @include button-bg($cl-green);
+}
+
+.btnEmphasize {
+  @include button-bg($cl-yellow);
+}
+
+.btnTransparent {
+  @include button-bg(transparent);
 }

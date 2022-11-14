@@ -1,0 +1,25 @@
+@mixin button-bg($bg, $txt-color: #ffffff) {
+  background: $bg;
+  color: $txt-color;
+
+  &:hover {
+    background: darken($bg, 8%);
+  }
+
+  &:active {
+    background: darken($bg, 25%);
+  }
+
+  @if $bg == transparent {
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
+  }
+}
+
+%flex-element-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

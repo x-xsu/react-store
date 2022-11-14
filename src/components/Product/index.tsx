@@ -1,7 +1,9 @@
 import styles from './styles.module.scss';
+import cn from 'classnames';
 
 import { ReactComponent as Star } from '../../assets/svg/star.svg'
-
+import { ReactComponent as Share } from '../../assets/svg/share.svg'
+import { ReactComponent as Like } from '../../assets/svg/like.svg'
 
 import { IProduct } from "../../models";
 
@@ -26,9 +28,18 @@ export function Product({ product }: ProductProps) {
         </div>
       </div>
       <div className={ styles.action }>
-        <button className={ styles.btnCart }>More info</button>
-        <button className={ styles.btnCart }>Add to cart</button>
-        <button className={ styles.btnLike }>Like</button>
+        <button className={ cn('btn', 'btnEmphasize') }>Add to cart</button>
+        <button className={ cn('btn') }>More info</button>
+        <div className={ styles.actionBox }>
+          <button className={ cn('btn', 'btnTransparent', styles.btnShare) }>
+            <Share />
+            <span>Share</span>
+          </button>
+          <button className={ cn('btn', 'btnTransparent', styles.btnLike) }>
+            <Like />
+            <span>Like</span>
+          </button>
+        </div>
       </div>
     </div>
   )

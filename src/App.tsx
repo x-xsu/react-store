@@ -12,9 +12,12 @@ function App() {
       <div className='container'>
         { loading && <Loader /> }
         { error && <ErrorMessage error={ error } /> }
-        <div className='productList'>
-          { products.map(product => <Product product={ product } key={ product.id } />) }
-        </div>
+        <section>
+          <h2>Our Products</h2>
+          <div className='productList'>
+            { products.map(product => <Product product={ product } key={ product.id } />) }
+          </div>
+        </section>
       </div>
     </div>
   );
