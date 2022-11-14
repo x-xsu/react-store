@@ -2,15 +2,7 @@
 @import "/src/styles/mixins";
 
 .navigation {
-  svg {
-    height: 20px;
-  }
-}
-
-.box {
   @extend %flex-element-center;
-
-  list-style: none;
 }
 
 .item {

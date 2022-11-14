@@ -1,9 +1,9 @@
 import { Layout } from "../components/Layout";
 
-export function FavouritePage() {
+export function ProductDetailPage() {
   return (
     <Layout>
-      <div>FavouritePage</div>
+      <div>ProductPage</div>
     </Layout>
   )
 }

@@ -5,14 +5,13 @@ import { ReactComponent as StarSvg } from '../../assets/svg/star.svg'
 import { ReactComponent as ShareSvg } from '../../assets/svg/share.svg'
 import { ReactComponent as FavouriteSvg } from '../../assets/svg/like.svg'
 
-import { IProduct } from "../../models";
+import { IProduct } from "../../models/models";
 
 interface ProductProps {
   product: IProduct
 }
 
-
-export function Product({ product }: ProductProps) {
+export function ProductCard({ product }: ProductProps) {
   return (
     <div className={ styles.product }>
       <div className={ styles.info }>
