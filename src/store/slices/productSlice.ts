@@ -9,12 +9,12 @@ interface ProductState {
 
 const initialState: ProductState = {
   loading: false,
-  error: '',
+  error: "",
   products: []
 }
 
 export const productSlice = createSlice({
-  name: 'product', // уникальный идентификатор
+  name: "product", // уникальный идентификатор
   initialState,
   reducers: {
     fetching(state) { // начало загрузки

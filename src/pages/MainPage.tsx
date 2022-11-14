@@ -21,7 +21,7 @@ export function MainPage() {
 
   return (
     <Layout>
-      <div className='container'>
+      <div className="container">
         <section>
           <h2>Our Products</h2>
 
@@ -30,7 +30,7 @@ export function MainPage() {
 
           { loading && <Loader /> }
           { error && <ErrorMessage error={ error } /> }
-          <div className='productList'>
+          <div className="productList">
             { products.map(product => <ProductCard product={ product } key={ product.id } />) }
           </div>
 

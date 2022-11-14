@@ -1,9 +1,9 @@
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 import { Link } from "react-router-dom";
 import cn from "classnames";
 
-import { ReactComponent as LogoSvg } from '../../assets/svg/logo.svg'
+import { ReactComponent as LogoSvg } from "../../assets/svg/logo.svg"
 
 import { Navigation } from "../Navigation";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ export function Header() {
   const [scroll, setScroll] = useState(false)
 
   useEffect(() => {
-    window.addEventListener('scroll', function () {
+    window.addEventListener("scroll", function () {
       let scrollPos = window.scrollY
       scrollPos > 0 ? setScroll(true) : setScroll(false)
     });

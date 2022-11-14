@@ -9,7 +9,7 @@ export const fetchProducts = () => {
   return async (dispatch: AppDispatch) => {
     try {
       dispatch(productSlice.actions.fetching())
-      const response = await axios.get<IProduct[]>('products')
+      const response = await axios.get<IProduct[]>("products")
       dispatch(productSlice.actions.fetchSuccess(
         response.data
       ))
