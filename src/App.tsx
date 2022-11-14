@@ -10,10 +10,11 @@ function App() {
   return (
     <div className='page'>
       <div className='container'>
-        { loading && <Loader /> }
-        { error && <ErrorMessage error={ error } /> }
         <section>
           <h2>Our Products</h2>
+          { loading && <Loader /> }
+          { error && <ErrorMessage error={ error } /> }
+
           <div className='productList'>
             { products.map(product => <Product product={ product } key={ product.id } />) }
           </div>

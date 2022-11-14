@@ -5,5 +5,5 @@ interface ErrorMessageProps {
 }
 
 export function ErrorMessage({ error }: ErrorMessageProps) {
-  return (<div className={ styles.errorMsg }>{ error }</div>)
+  return (<div className={ styles.errorMsg }>¯\_(ツ)_/¯ { error } ¯\_(ツ)_/¯</div>)
 }
