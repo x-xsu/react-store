@@ -16,9 +16,19 @@ section {
   margin: 80px 0;
 }
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 button {
   border: 0;
+  padding: 0;
   background: transparent;
+}
+
+button, a {
+  cursor: pointer;
 }
 
 h2 {
@@ -30,6 +40,7 @@ h2 {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -46,11 +57,10 @@ h2 {
   border-radius: 44px;
   font-size: 14px;
   line-height: 18px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 0 25px;
-  cursor: pointer;
   transition: all $duration;
 
   @include button-bg($cl-primary);

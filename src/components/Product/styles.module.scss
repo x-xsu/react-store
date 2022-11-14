@@ -1,7 +1,7 @@
 @import "/src/styles/variables";
 @import "/src/styles/mixins";
 
-.card {
+.product {
   position: relative;
   background: #ffffff;
   padding: 25px;
@@ -35,8 +35,9 @@
 }
 
 .category {
-  font-size: 15px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
   margin: 15px 0 8px;
 }
 
@@ -94,6 +95,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  svg {
+    height: 20px;
+  }
 }
 
 .btnShare {

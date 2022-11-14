@@ -1,0 +1,76 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.navigation {
+  svg {
+    height: 20px;
+  }
+}
+
+.box {
+  @extend %flex-element-center;
+
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: flex-end;
+  font-size: 16px;
+  line-height: 20px;
+  color: $cl-txt-primary;
+
+  & + & {
+    margin-left: 35px;
+  }
+
+  svg {
+    height: 20px;
+    margin-left: 10px;
+
+    &.iconFav {
+      path {
+        stroke: $cl-txt-primary;
+      }
+    }
+
+    &.iconCart {
+      fill: $cl-txt-primary;
+    }
+  }
+
+  span {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background: $cl-primary;
+      transition: all $duration;
+    }
+  }
+
+  &:hover {
+    svg {
+      &.iconFav {
+        path {
+          stroke: $cl-red;
+        }
+      }
+
+      &.iconCart {
+        fill: $cl-primary;
+      }
+    }
+
+    span {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
