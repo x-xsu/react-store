@@ -16,21 +16,6 @@
     margin-left: 35px;
   }
 
-  svg {
-    height: 20px;
-    margin-left: 10px;
-
-    &.iconFav {
-      path {
-        stroke: $cl-txt-primary;
-      }
-    }
-
-    &.iconCart {
-      fill: $cl-txt-primary;
-    }
-  }
-
   span {
     position: relative;
 
@@ -43,6 +28,21 @@
       height: 1px;
       background: $cl-primary;
       transition: all $duration;
+    }
+  }
+
+  svg {
+    height: 20px;
+    margin-left: 10px;
+
+    &.iconFav {
+      path {
+        stroke: $cl-txt-primary;
+      }
+    }
+
+    &.iconCart {
+      fill: $cl-txt-primary;
     }
   }
 
@@ -63,6 +63,20 @@
       &::after {
         width: 100%;
       }
+    }
+  }
+
+  @media (max-width: $lg) {
+    & + & {
+      margin-left: 20px;
+    }
+
+    span {
+      display: none;
+    }
+
+    svg {
+      margin: 0;
     }
   }
 }

@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
 import cn from "classnames";
 
-import { ReactComponent as LogoSvg } from "../../assets/svg/logo.svg"
+import { ReactComponent as LogoSvg } from "../../assets/svg/shine.svg"
 
 import { Navigation } from "../Navigation";
 import { useEffect, useState } from "react";

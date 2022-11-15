@@ -9,6 +9,7 @@ export function ProductDetailPage() {
   return (
     <Layout>
       <div className={ cn("container") }>
+        <div>{ params.id }</div>
         <ProductDetail />
       </div>
     </Layout>
