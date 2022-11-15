@@ -4,8 +4,8 @@ import { ReactComponent as Search } from "../../assets/svg/loupe.svg"
 import { useInput } from "../../hooks/input";
 import { useEffect, useState } from "react";
 import { useDebounce } from "../../hooks/debounce";
-import axios from "../../axios";
 import { IProduct, ServerResponse } from "../../models/models";
+import axios from "../../axios";
 
 export function ProductSearch() {
   const input = useInput("")
@@ -13,16 +13,25 @@ export function ProductSearch() {
   const debounced = useDebounce<string>(input.value)
 
   async function searchProducts() {
-    const response = await axios.get<ServerResponse<IProduct>>("products")
-    console.log(response.data)
-    setProducts(response.data.results)
+    const res = await axios.get<ServerResponse<IProduct[]>>("products")
+    return res.data
+    // setProducts(resData)
+  }
+
+  function getSearchProducts(value: string) {
+    console.log(products)
+    const res = products.filter(product => {
+      return product.title.toLowerCase().includes(value.toLowerCase())
+    })
+
+    return res
   }
 
   useEffect(() => {
-    if (input.value.length > 3) {
-      searchProducts()
+    const value = input.value
+    if (value.length >= 3) {
+      //  setProducts(resData)
     }
-    console.log("debounced", debounced)
   }, [debounced])
 
   return (
@@ -41,9 +50,11 @@ export function ProductSearch() {
       </div>
 
       <ul className={ styles.dropdown }>
-        { products.map(products => (
-          <li key={ products.id }>{ products.title }</li>
-        )) }
+        {
+          products.map(products => (
+            <li key={ products.id }>{ products.title }</li>
+          ))
+        }
       </ul>
 
     </div>
