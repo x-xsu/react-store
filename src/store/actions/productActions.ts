@@ -11,7 +11,7 @@ export const fetchProducts = () => {
       dispatch(productSlice.actions.fetching())
       const response = await axios.get<IProduct[]>("products")
       dispatch(productSlice.actions.fetchSuccess(
-        response.data.slice(0, 8)
+        response.data
       ))
     } catch (e) {
       dispatch(productSlice.actions.fetchError(e as Error))

@@ -10,7 +10,7 @@ export function MainPage() {
         <section>
           <h2>Our Products</h2>
 
-          <div className={ "flex-element-center" }>
+          <div>
             <ProductSearch />
             <ProductFilter />
           </div>
