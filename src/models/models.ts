@@ -10,3 +10,8 @@ export interface IProduct {
     count: number,
   }
 }
+
+export interface ICategory {
+  id: number,
+  name: string
+}
