@@ -17,17 +17,17 @@ export const productSlice = createSlice({
   name: "product", // уникальный идентификатор
   initialState,
   reducers: {
-    fetching(state) { // начало загрузки
+    productsFetching(state) { // начало загрузки
       state.loading = true
     },
-    fetchSuccess(state, action: PayloadAction<IProduct[]>) { // успешная загрузка
+    productsFetchSuccess(state, action: PayloadAction<IProduct[]>) { // успешная загрузка
       state.loading = false
       state.products = action.payload
     },
-    fetchError(state, action: PayloadAction<Error>) { // ошибка
+    productsFetchError(state, action: PayloadAction<Error>) { // ошибка
       state.loading = false
       state.error = action.payload.message
-    }
+    },
   }
 })
 
