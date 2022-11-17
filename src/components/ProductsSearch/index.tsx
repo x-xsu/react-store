@@ -5,12 +5,15 @@ import { useInput } from "../../hooks/input";
 import { useEffect, useState } from "react";
 import { useDebounce } from "../../hooks/debounce";
 import { IProduct } from "../../models/models";
+import { useNavigate } from "react-router-dom";
+
 import axios from "../../axios";
 
 export function ProductSearch() {
   const input = useInput("")
   const [results, setResults] = useState<IProduct[]>([])
   const [dropdown, setDropdown] = useState(false)
+  const navigate = useNavigate()
 
   const debounced = useDebounce<string>(input.value)
 
@@ -49,13 +52,17 @@ export function ProductSearch() {
       { dropdown && (
         <ul className={ styles.dropdown }>
           {
-            results.map(products => (
-              <li key={ products.id }>{ products.title }</li>
+            results.map(product => (
+              <li
+                key={ product.id }
+                onClick={ () => navigate(`/product/${ product.id }`) }>
+                <img src={ product.image } alt={ product.title } />
+                <span>{ product.title }</span>
+              </li>
             ))
           }
         </ul>
       ) }
-
 
     </div>
   )

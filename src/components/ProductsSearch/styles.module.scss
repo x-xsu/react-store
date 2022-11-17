@@ -3,7 +3,6 @@
 
 .search {
   position: relative;
-
 }
 
 .boxInput {
@@ -12,7 +11,7 @@
   height: 42px;
   background: #fff;
   padding: 0 18px;
-  border-radius: 42px;
+  border-radius: 21px;
 
   svg {
     height: 18px;
@@ -31,8 +30,36 @@
 .dropdown {
   position: absolute;
   width: 100%;
-  top: 0;
+  top: 100%;
   left: 0;
   background: #fff;
-  border-radius: 42px;
+  border-radius: 21px;
+  box-shadow: 0 0 15px rgba(#000, 0.1);
+  padding: 10px 0;
+  margin-top: 10px;
+  z-index: 9;
+  max-height: 350px;
+  overflow-y: auto;
+
+  li {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 22px;
+    color: $cl-txt-primary;
+    padding: 5px 25px;
+    cursor: pointer;
+    transition: $duration;
+
+    &:hover {
+      background: rgba(#000, 0.1);
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+  }
 }
