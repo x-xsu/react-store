@@ -5,7 +5,7 @@ import { ErrorMessage } from "../ErrorMessage";
 import { ProductCard } from "../ProductCard";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { useEffect } from "react";
-import { fetchProducts } from "../../store/actions/productActions";
+import { fetchProducts } from "../../store/ActionCreator";
 
 export function ProductsList() {
   const dispatch = useAppDispatch()

@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
-export function ProductFilter() {
+export function ProductsFilter() {
   return (
-    <div className={ styles.filter }> ProductFilter</div>
+    <div className={ styles.filter }> ProductsFilter</div>
   )
 }

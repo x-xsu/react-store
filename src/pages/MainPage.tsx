@@ -1,19 +1,25 @@
 import { Layout } from "../components/Layout";
 import { ProductsList } from "../components/ProductsList";
 import { ProductSearch } from "../components/ProductsSearch";
-import { ProductFilter } from "../components/ProductsFilter";
+import { ProductsFilter } from "../components/ProductsFilter";
+import { ProductsCategory } from "../components/ProductsCategory";
 
 export function MainPage() {
   return (
     <Layout>
       <div className="container">
         <section>
-          <h2>Our Products</h2>
-
+          <h1>Store</h1>
+          <p>Find product</p>
           <div>
             <ProductSearch />
-            <ProductFilter />
           </div>
+        </section>
+        <section>
+          <h2>Our Products</h2>
+
+          <ProductsCategory />
+          {/*<ProductsFilter />*/}
 
           <ProductsList />
         </section>
