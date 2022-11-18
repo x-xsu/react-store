@@ -10,7 +10,3 @@ export interface IProduct {
     count: number,
   }
 }
-
-export interface ServerResponse<T> {
-  results: T[]
-}

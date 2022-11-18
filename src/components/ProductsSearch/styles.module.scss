@@ -12,7 +12,7 @@
   height: 42px;
   background: #fff;
   padding: 0 18px;
-  border-radius: 42px;
+  border-radius: 22px;
 
   svg {
     height: 18px;
@@ -29,10 +29,47 @@
 }
 
 .dropdown {
+  max-height: 350px;
+  overflow-y: auto;
   position: absolute;
   width: 100%;
-  top: 0;
+  top: 100%;
   left: 0;
   background: #fff;
-  border-radius: 42px;
+  border-radius: 22px;
+  padding: 10px 0;
+  margin-top: 8px;
+  box-shadow: 0 0 15px rgba(#000, 0.1);
+  z-index: 1;
+  cursor: pointer;
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 5px 25px;
+    font-size: 16px;
+    line-height: 22px;
+    color: $cl-primary;
+    transition: $duration;
+
+    &:hover {
+      background: rgba($cl-primary, 0.1);
+    }
+
+    span {
+      font-size: 14px;
+      margin-left: 25px;
+      color: $cl-txt-default-light;
+    }
+
+    img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+      padding: 5px 0;
+      margin-right: 10px;
+      border-radius: 100%;
+      background: #fff;
+    }
+  }
 }
