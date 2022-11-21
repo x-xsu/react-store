@@ -16,6 +16,21 @@
       color: #000;
     }
   }
+
+  @if $bg == #fff {
+    svg {
+      fill: $cl-primary;
+    }
+
+    &:hover {
+      background: $cl-primary;
+      color: #fff;
+
+      svg {
+        fill: #fff;
+      }
+    }
+  }
 }
 
 %flex-element-center {

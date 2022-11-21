@@ -104,14 +104,23 @@ input {
 
   svg {
     margin-right: 8px;
+    transition: all $duration;
   }
+}
+
+.btnTransparent {
+  @include button-bg(transparent);
 }
 
 .btnEmphasize {
   @include button-bg($cl-green);
 }
 
-.btnTransparent {
-  @include button-bg(transparent);
+.btnWhite {
+  @include button-bg(#fff, $cl-primary);
+
+  svg {
+    fill: $cl-primary;
+  }
 }
 
